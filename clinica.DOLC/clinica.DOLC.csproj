@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86278607-01F3-411D-B121-1FC858B32C8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>clinica.DOLC</RootNamespace>
+    <AssemblyName>clinica.DOLC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.1\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BOLETA.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicaEDM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicaEDM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicaEDM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicaEDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicaEDM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DOCTOR.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLEADO.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INSUMO.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MEDIO_PAGO.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEDIDO_INSUMO.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PROVEEDOR.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RESERVA.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SERVICIO.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SITUACION_ECONOMICA.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_FAMILIA.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_INSUMO.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_USUARIO.cs">
+      <DependentUpon>ClinicaEDM.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="ClinicaEDM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClinicaEDM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ClinicaEDM.edmx.diagram">
+      <DependentUpon>ClinicaEDM.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClinicaEDM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicaEDM.edmx</DependentUpon>
+      <LastGenOutput>ClinicaEDM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ClinicaEDM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicaEDM.edmx</DependentUpon>
+      <LastGenOutput>ClinicaEDM.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

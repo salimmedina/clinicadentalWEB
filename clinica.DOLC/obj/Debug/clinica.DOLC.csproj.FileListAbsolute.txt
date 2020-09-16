@@ -1,0 +1,10 @@
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\bin\Debug\clinica.DOLC.dll.config
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\bin\Debug\clinica.DOLC.dll
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\bin\Debug\clinica.DOLC.pdb
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\bin\Debug\EntityFramework.dll
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\bin\Debug\EntityFramework.xml
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\obj\Debug\clinica.DOLC.csprojAssemblyReference.cache
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\obj\Debug\clinica.DOLC.csproj.CoreCompileInputs.cache
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\obj\Debug\clinica.DOLC.csproj.CopyComplete
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\obj\Debug\clinica.DOLC.dll
+C:\Users\marck\Desktop\solucion prueba\clinica.DOLC\obj\Debug\clinica.DOLC.pdb

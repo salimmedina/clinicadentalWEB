@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b924f347e96748dda4a2d82f07046001" Name="Diagram1">
+        <EntityTypeShape EntityType="ClinicaModel.BOLETA" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.CLIENTE" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.DOCTOR" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.EMPLEADO" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.INSUMO" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.MEDIO_PAGO" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.PEDIDO_INSUMO" Width="1.5" PointX="10.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.PROVEEDOR" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.RESERVA" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.SERVICIO" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.SITUACION_ECONOMICA" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.TIPO_FAMILIA" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.TIPO_INSUMO" Width="1.5" PointX="5.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.TIPO_USUARIO" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaModel.CONTROL" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="ClinicaModel.BOLETA_CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.BOLETA_MEDIO_PAGO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.BOLETA_SERVICIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.CLIENTE_SITUACION_ECONOMICA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.RESERVA_CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.DOCTOR_TIPO_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.RESERVA_DOCTOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.EMPLEADO_TIPO_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.INSUMO_TIPO_FAMILIA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.INSUMO_TIPO_INSUMO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.PEDIDO_INSUMO_INSUMO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.PEDIDO_INSUMO_PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaModel.RESERVA_SERVICIO_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BOLETA">
+    <Key>
+      <PropertyRef Name="ID_BOLETA" />
+    </Key>
+    <Property Name="ID_BOLETA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA_BOLETA" Type="DateTime" Nullable="false" />
+    <Property Name="VALOR_BOLETA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_MEDIO_PAGO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ID_SERVICIO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ID_CLIENTE" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.BOLETA_CLIENTE_FK" FromRole="BOLETA" ToRole="CLIENTE" />
+    <NavigationProperty Name="MEDIO_PAGO" Relationship="Self.BOLETA_MEDIO_PAGO_FK" FromRole="BOLETA" ToRole="MEDIO_PAGO" />
+    <NavigationProperty Name="SERVICIO" Relationship="Self.BOLETA_SERVICIO_FK" FromRole="BOLETA" ToRole="SERVICIO" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APE_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RUT_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRE_CLIENTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FONO_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAIL_CLIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_SIT_ECO" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="BOLETA" Relationship="Self.BOLETA_CLIENTE_FK" FromRole="CLIENTE" ToRole="BOLETA" />
+    <NavigationProperty Name="SITUACION_ECONOMICA" Relationship="Self.CLIENTE_SITUACION_ECONOMICA_FK" FromRole="CLIENTE" ToRole="SITUACION_ECONOMICA" />
+    <NavigationProperty Name="RESERVA" Relationship="Self.RESERVA_CLIENTE_FK" FromRole="CLIENTE" ToRole="RESERVA" />
+  </EntityType>
+  <EntityType Name="DOCTOR">
+    <Key>
+      <PropertyRef Name="ID_DOC" />
+    </Key>
+    <Property Name="ID_DOC" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_DOC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APE_DOC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RUT_DOC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FONO_DOC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAIL_DOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRE_DOC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_TIPO_USUARIO" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="TIPO_USUARIO" Relationship="Self.DOCTOR_TIPO_USUARIO_FK" FromRole="DOCTOR" ToRole="TIPO_USUARIO" />
+    <NavigationProperty Name="RESERVA" Relationship="Self.RESERVA_DOCTOR_FK" FromRole="DOCTOR" ToRole="RESERVA" />
+  </EntityType>
+  <EntityType Name="EMPLEADO">
+    <Key>
+      <PropertyRef Name="ID_EMP" />
+    </Key>
+    <Property Name="ID_EMP" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_EMP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APE_EMP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RUT_EMP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FONO_EMP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRE_EMP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAIL_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_TIPO_USUARIO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="PASS_EMP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TIPO_USUARIO" Relationship="Self.EMPLEADO_TIPO_USUARIO_FK" FromRole="EMPLEADO" ToRole="TIPO_USUARIO" />
+  </EntityType>
+  <EntityType Name="INSUMO">
+    <Key>
+      <PropertyRef Name="ID_INSUMO" />
+    </Key>
+    <Property Name="ID_INSUMO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_INSUMO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_TIPO_INSUMO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ID_TIPO_FAMILIA" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="STOCK" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PRECIO_COMPRA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <NavigationProperty Name="TIPO_FAMILIA" Relationship="Self.INSUMO_TIPO_FAMILIA_FK" FromRole="INSUMO" ToRole="TIPO_FAMILIA" />
+    <NavigationProperty Name="TIPO_INSUMO" Relationship="Self.INSUMO_TIPO_INSUMO_FK" FromRole="INSUMO" ToRole="TIPO_INSUMO" />
+    <NavigationProperty Name="PEDIDO_INSUMO" Relationship="Self.PEDIDO_INSUMO_INSUMO_FK" FromRole="INSUMO" ToRole="PEDIDO_INSUMO" />
+  </EntityType>
+  <EntityType Name="MEDIO_PAGO">
+    <Key>
+      <PropertyRef Name="ID_MEDIO_PAGO" />
+    </Key>
+    <Property Name="ID_MEDIO_PAGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_MEDIO_PAGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BOLETA" Relationship="Self.BOLETA_MEDIO_PAGO_FK" FromRole="MEDIO_PAGO" ToRole="BOLETA" />
+  </EntityType>
+  <EntityType Name="PEDIDO_INSUMO">
+    <Key>
+      <PropertyRef Name="ID_PEDIDO" />
+      <PropertyRef Name="CANTIDAD" />
+    </Key>
+    <Property Name="ID_PEDIDO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CANTIDAD" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_PROVEEDOR" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ID_INSUMO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="NOM_INSUMO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="INSUMO" Relationship="Self.PEDIDO_INSUMO_INSUMO_FK" FromRole="PEDIDO_INSUMO" ToRole="INSUMO" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Self.PEDIDO_INSUMO_PROVEEDOR_FK" FromRole="PEDIDO_INSUMO" ToRole="PROVEEDOR" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="ID_PROVEEDOR" />
+    </Key>
+    <Property Name="ID_PROVEEDOR" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="RUT_PROVEEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOM_PROVEEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FONO_PROVEEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRE_PROVEEDOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAIL_PROVEEDOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PEDIDO_INSUMO" Relationship="Self.PEDIDO_INSUMO_PROVEEDOR_FK" FromRole="PROVEEDOR" ToRole="PEDIDO_INSUMO" />
+  </EntityType>
+  <EntityType Name="RESERVA">
+    <Key>
+      <PropertyRef Name="ID_RESERVA" />
+    </Key>
+    <Property Name="ID_RESERVA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA_RESERVA" Type="DateTime" Nullable="false" />
+    <Property Name="HORA_RESERVA" Type="DateTime" />
+    <Property Name="ID_DOC" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ID_CLIENTE" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="ID_SERVICIO" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.RESERVA_CLIENTE_FK" FromRole="RESERVA" ToRole="CLIENTE" />
+    <NavigationProperty Name="DOCTOR" Relationship="Self.RESERVA_DOCTOR_FK" FromRole="RESERVA" ToRole="DOCTOR" />
+    <NavigationProperty Name="SERVICIO" Relationship="Self.RESERVA_SERVICIO_FK" FromRole="RESERVA" ToRole="SERVICIO" />
+  </EntityType>
+  <EntityType Name="SERVICIO">
+    <Key>
+      <PropertyRef Name="ID_SERVICIO" />
+    </Key>
+    <Property Name="ID_SERVICIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_SERVICIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION_SERVICIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VALOR_SERVICIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <NavigationProperty Name="BOLETA" Relationship="Self.BOLETA_SERVICIO_FK" FromRole="SERVICIO" ToRole="BOLETA" />
+    <NavigationProperty Name="RESERVA" Relationship="Self.RESERVA_SERVICIO_FK" FromRole="SERVICIO" ToRole="RESERVA" />
+  </EntityType>
+  <EntityType Name="SITUACION_ECONOMICA">
+    <Key>
+      <PropertyRef Name="ID_SIT_ECO" />
+    </Key>
+    <Property Name="ID_SIT_ECO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="AFP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LIQUIDACION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DESEMPLEO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FINIQUITO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.CLIENTE_SITUACION_ECONOMICA_FK" FromRole="SITUACION_ECONOMICA" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="TIPO_FAMILIA">
+    <Key>
+      <PropertyRef Name="ID_TIPO_FAMILIA" />
+    </Key>
+    <Property Name="ID_TIPO_FAMILIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_TIPO_FAMILIA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="INSUMO" Relationship="Self.INSUMO_TIPO_FAMILIA_FK" FromRole="TIPO_FAMILIA" ToRole="INSUMO" />
+  </EntityType>
+  <EntityType Name="TIPO_INSUMO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_INSUMO" />
+    </Key>
+    <Property Name="ID_TIPO_INSUMO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_TIPO_INSUMO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="INSUMO" Relationship="Self.INSUMO_TIPO_INSUMO_FK" FromRole="TIPO_INSUMO" ToRole="INSUMO" />
+  </EntityType>
+  <EntityType Name="TIPO_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_USUARIO" />
+    </Key>
+    <Property Name="ID_TIPO_USUARIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOM_TIPO_USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DOCTOR" Relationship="Self.DOCTOR_TIPO_USUARIO_FK" FromRole="TIPO_USUARIO" ToRole="DOCTOR" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.EMPLEADO_TIPO_USUARIO_FK" FromRole="TIPO_USUARIO" ToRole="EMPLEADO" />
+  </EntityType>
+  <EntityType Name="CONTROL">
+    <Key>
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="SERVICIO" />
+    </Key>
+    <Property Name="NOM_CLIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="SERVICIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="BOLETA_CLIENTE_FK">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+    <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="BOLETA">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BOLETA_MEDIO_PAGO_FK">
+    <End Role="MEDIO_PAGO" Type="Self.MEDIO_PAGO" Multiplicity="0..1" />
+    <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEDIO_PAGO">
+        <PropertyRef Name="ID_MEDIO_PAGO" />
+      </Principal>
+      <Dependent Role="BOLETA">
+        <PropertyRef Name="ID_MEDIO_PAGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BOLETA_SERVICIO_FK">
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="0..1" />
+    <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="ID_SERVICIO" />
+      </Principal>
+      <Dependent Role="BOLETA">
+        <PropertyRef Name="ID_SERVICIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CLIENTE_SITUACION_ECONOMICA_FK">
+    <End Role="SITUACION_ECONOMICA" Type="Self.SITUACION_ECONOMICA" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SITUACION_ECONOMICA">
+        <PropertyRef Name="ID_SIT_ECO" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="ID_SIT_ECO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RESERVA_CLIENTE_FK">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+    <End Role="RESERVA" Type="Self.RESERVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="RESERVA">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DOCTOR_TIPO_USUARIO_FK">
+    <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="0..1" />
+    <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_USUARIO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Principal>
+      <Dependent Role="DOCTOR">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RESERVA_DOCTOR_FK">
+    <End Role="DOCTOR" Type="Self.DOCTOR" Multiplicity="0..1" />
+    <End Role="RESERVA" Type="Self.RESERVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DOCTOR">
+        <PropertyRef Name="ID_DOC" />
+      </Principal>
+      <Dependent Role="RESERVA">
+        <PropertyRef Name="ID_DOC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EMPLEADO_TIPO_USUARIO_FK">
+    <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="0..1" />
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_USUARIO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Principal>
+      <Dependent Role="EMPLEADO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INSUMO_TIPO_FAMILIA_FK">
+    <End Role="TIPO_FAMILIA" Type="Self.TIPO_FAMILIA" Multiplicity="0..1" />
+    <End Role="INSUMO" Type="Self.INSUMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_FAMILIA">
+        <PropertyRef Name="ID_TIPO_FAMILIA" />
+      </Principal>
+      <Dependent Role="INSUMO">
+        <PropertyRef Name="ID_TIPO_FAMILIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INSUMO_TIPO_INSUMO_FK">
+    <End Role="TIPO_INSUMO" Type="Self.TIPO_INSUMO" Multiplicity="0..1" />
+    <End Role="INSUMO" Type="Self.INSUMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_INSUMO">
+        <PropertyRef Name="ID_TIPO_INSUMO" />
+      </Principal>
+      <Dependent Role="INSUMO">
+        <PropertyRef Name="ID_TIPO_INSUMO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PEDIDO_INSUMO_INSUMO_FK">
+    <End Role="INSUMO" Type="Self.INSUMO" Multiplicity="0..1" />
+    <End Role="PEDIDO_INSUMO" Type="Self.PEDIDO_INSUMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INSUMO">
+        <PropertyRef Name="ID_INSUMO" />
+      </Principal>
+      <Dependent Role="PEDIDO_INSUMO">
+        <PropertyRef Name="ID_INSUMO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PEDIDO_INSUMO_PROVEEDOR_FK">
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+    <End Role="PEDIDO_INSUMO" Type="Self.PEDIDO_INSUMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Principal>
+      <Dependent Role="PEDIDO_INSUMO">
+        <PropertyRef Name="ID_PROVEEDOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RESERVA_SERVICIO_FK">
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="0..1" />
+    <End Role="RESERVA" Type="Self.RESERVA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="ID_SERVICIO" />
+      </Principal>
+      <Dependent Role="RESERVA">
+        <PropertyRef Name="ID_SERVICIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BOLETA" EntityType="Self.BOLETA" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="DOCTOR" EntityType="Self.DOCTOR" />
+    <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
+    <EntitySet Name="INSUMO" EntityType="Self.INSUMO" />
+    <EntitySet Name="MEDIO_PAGO" EntityType="Self.MEDIO_PAGO" />
+    <EntitySet Name="PEDIDO_INSUMO" EntityType="Self.PEDIDO_INSUMO" />
+    <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" />
+    <EntitySet Name="RESERVA" EntityType="Self.RESERVA" />
+    <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" />
+    <EntitySet Name="SITUACION_ECONOMICA" EntityType="Self.SITUACION_ECONOMICA" />
+    <EntitySet Name="TIPO_FAMILIA" EntityType="Self.TIPO_FAMILIA" />
+    <EntitySet Name="TIPO_INSUMO" EntityType="Self.TIPO_INSUMO" />
+    <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" />
+    <EntitySet Name="CONTROL" EntityType="Self.CONTROL" />
+    <AssociationSet Name="BOLETA_CLIENTE_FK" Association="Self.BOLETA_CLIENTE_FK">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="BOLETA" EntitySet="BOLETA" />
+    </AssociationSet>
+    <AssociationSet Name="BOLETA_MEDIO_PAGO_FK" Association="Self.BOLETA_MEDIO_PAGO_FK">
+      <End Role="MEDIO_PAGO" EntitySet="MEDIO_PAGO" />
+      <End Role="BOLETA" EntitySet="BOLETA" />
+    </AssociationSet>
+    <AssociationSet Name="BOLETA_SERVICIO_FK" Association="Self.BOLETA_SERVICIO_FK">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="BOLETA" EntitySet="BOLETA" />
+    </AssociationSet>
+    <AssociationSet Name="CLIENTE_SITUACION_ECONOMICA_FK" Association="Self.CLIENTE_SITUACION_ECONOMICA_FK">
+      <End Role="SITUACION_ECONOMICA" EntitySet="SITUACION_ECONOMICA" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="RESERVA_CLIENTE_FK" Association="Self.RESERVA_CLIENTE_FK">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="RESERVA" EntitySet="RESERVA" />
+    </AssociationSet>
+    <AssociationSet Name="DOCTOR_TIPO_USUARIO_FK" Association="Self.DOCTOR_TIPO_USUARIO_FK">
+      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
+      <End Role="DOCTOR" EntitySet="DOCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="RESERVA_DOCTOR_FK" Association="Self.RESERVA_DOCTOR_FK">
+      <End Role="DOCTOR" EntitySet="DOCTOR" />
+      <End Role="RESERVA" EntitySet="RESERVA" />
+    </AssociationSet>
+    <AssociationSet Name="EMPLEADO_TIPO_USUARIO_FK" Association="Self.EMPLEADO_TIPO_USUARIO_FK">
+      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="INSUMO_TIPO_FAMILIA_FK" Association="Self.INSUMO_TIPO_FAMILIA_FK">
+      <End Role="TIPO_FAMILIA" EntitySet="TIPO_FAMILIA" />
+      <End Role="INSUMO" EntitySet="INSUMO" />
+    </AssociationSet>
+    <AssociationSet Name="INSUMO_TIPO_INSUMO_FK" Association="Self.INSUMO_TIPO_INSUMO_FK">
+      <End Role="TIPO_INSUMO" EntitySet="TIPO_INSUMO" />
+      <End Role="INSUMO" EntitySet="INSUMO" />
+    </AssociationSet>
+    <AssociationSet Name="PEDIDO_INSUMO_INSUMO_FK" Association="Self.PEDIDO_INSUMO_INSUMO_FK">
+      <End Role="INSUMO" EntitySet="INSUMO" />
+      <End Role="PEDIDO_INSUMO" EntitySet="PEDIDO_INSUMO" />
+    </AssociationSet>
+    <AssociationSet Name="PEDIDO_INSUMO_PROVEEDOR_FK" Association="Self.PEDIDO_INSUMO_PROVEEDOR_FK">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="PEDIDO_INSUMO" EntitySet="PEDIDO_INSUMO" />
+    </AssociationSet>
+    <AssociationSet Name="RESERVA_SERVICIO_FK" Association="Self.RESERVA_SERVICIO_FK">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="RESERVA" EntitySet="RESERVA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

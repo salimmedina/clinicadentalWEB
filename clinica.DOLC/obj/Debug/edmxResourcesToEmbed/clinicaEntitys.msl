@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="BOLETA">
+      <EntityTypeMapping TypeName="Model.BOLETA">
+        <MappingFragment StoreEntitySet="BOLETA">
+          <ScalarProperty Name="ID_BOLETA" ColumnName="ID_BOLETA" />
+          <ScalarProperty Name="FECHA_BOLETA" ColumnName="FECHA_BOLETA" />
+          <ScalarProperty Name="VALOR_BOLETA" ColumnName="VALOR_BOLETA" />
+          <ScalarProperty Name="ID_MEDIO_PAGO" ColumnName="ID_MEDIO_PAGO" />
+          <ScalarProperty Name="ID_SERVICIO" ColumnName="ID_SERVICIO" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="Model.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="NOM_CLIENTE" ColumnName="NOM_CLIENTE" />
+          <ScalarProperty Name="APE_CLIENTE" ColumnName="APE_CLIENTE" />
+          <ScalarProperty Name="RUT_CLIENTE" ColumnName="RUT_CLIENTE" />
+          <ScalarProperty Name="DIRE_CLIENTE" ColumnName="DIRE_CLIENTE" />
+          <ScalarProperty Name="FONO_CLIENTE" ColumnName="FONO_CLIENTE" />
+          <ScalarProperty Name="MAIL_CLIENTE" ColumnName="MAIL_CLIENTE" />
+          <ScalarProperty Name="PASSWORD_CLIENTE" ColumnName="PASSWORD_CLIENTE" />
+          <ScalarProperty Name="ID_SIT_ECO" ColumnName="ID_SIT_ECO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOCTOR">
+      <EntityTypeMapping TypeName="Model.DOCTOR">
+        <MappingFragment StoreEntitySet="DOCTOR">
+          <ScalarProperty Name="ID_DOC" ColumnName="ID_DOC" />
+          <ScalarProperty Name="NOM_DOC" ColumnName="NOM_DOC" />
+          <ScalarProperty Name="APE_DOC" ColumnName="APE_DOC" />
+          <ScalarProperty Name="RUT_DOC" ColumnName="RUT_DOC" />
+          <ScalarProperty Name="FONO_DOC" ColumnName="FONO_DOC" />
+          <ScalarProperty Name="MAIL_DOC" ColumnName="MAIL_DOC" />
+          <ScalarProperty Name="DIRE_DOC" ColumnName="DIRE_DOC" />
+          <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADO">
+      <EntityTypeMapping TypeName="Model.EMPLEADO">
+        <MappingFragment StoreEntitySet="EMPLEADO">
+          <ScalarProperty Name="ID_EMP" ColumnName="ID_EMP" />
+          <ScalarProperty Name="NOM_EMP" ColumnName="NOM_EMP" />
+          <ScalarProperty Name="APE_EMP" ColumnName="APE_EMP" />
+          <ScalarProperty Name="RUT_EMP" ColumnName="RUT_EMP" />
+          <ScalarProperty Name="FONO_EMP" ColumnName="FONO_EMP" />
+          <ScalarProperty Name="DIRE_EMP" ColumnName="DIRE_EMP" />
+          <ScalarProperty Name="MAIL_EMP" ColumnName="MAIL_EMP" />
+          <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
+          <ScalarProperty Name="PASS_EMP" ColumnName="PASS_EMP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INSUMO">
+      <EntityTypeMapping TypeName="Model.INSUMO">
+        <MappingFragment StoreEntitySet="INSUMO">
+          <ScalarProperty Name="ID_INSUMO" ColumnName="ID_INSUMO" />
+          <ScalarProperty Name="NOM_INSUMO" ColumnName="NOM_INSUMO" />
+          <ScalarProperty Name="ID_TIPO_INSUMO" ColumnName="ID_TIPO_INSUMO" />
+          <ScalarProperty Name="ID_TIPO_FAMILIA" ColumnName="ID_TIPO_FAMILIA" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDIO_PAGO">
+      <EntityTypeMapping TypeName="Model.MEDIO_PAGO">
+        <MappingFragment StoreEntitySet="MEDIO_PAGO">
+          <ScalarProperty Name="ID_MEDIO_PAGO" ColumnName="ID_MEDIO_PAGO" />
+          <ScalarProperty Name="NOM_MEDIO_PAGO" ColumnName="NOM_MEDIO_PAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PEDIDO_INSUMO">
+      <EntityTypeMapping TypeName="Model.PEDIDO_INSUMO">
+        <MappingFragment StoreEntitySet="PEDIDO_INSUMO">
+          <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+          <ScalarProperty Name="ID_INSUMO" ColumnName="ID_INSUMO" />
+          <ScalarProperty Name="NOM_INSUMO" ColumnName="NOM_INSUMO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVEEDOR">
+      <EntityTypeMapping TypeName="Model.PROVEEDOR">
+        <MappingFragment StoreEntitySet="PROVEEDOR">
+          <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+          <ScalarProperty Name="RUT_PROVEEDOR" ColumnName="RUT_PROVEEDOR" />
+          <ScalarProperty Name="NOM_PROVEEDOR" ColumnName="NOM_PROVEEDOR" />
+          <ScalarProperty Name="FONO_PROVEEDOR" ColumnName="FONO_PROVEEDOR" />
+          <ScalarProperty Name="DIRE_PROVEEDOR" ColumnName="DIRE_PROVEEDOR" />
+          <ScalarProperty Name="MAIL_PROVEEDOR" ColumnName="MAIL_PROVEEDOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESERVA">
+      <EntityTypeMapping TypeName="Model.RESERVA">
+        <MappingFragment StoreEntitySet="RESERVA">
+          <ScalarProperty Name="ID_RESERVA" ColumnName="ID_RESERVA" />
+          <ScalarProperty Name="FECHA_RESERVA" ColumnName="FECHA_RESERVA" />
+          <ScalarProperty Name="HORA_RESERVA" ColumnName="HORA_RESERVA" />
+          <ScalarProperty Name="ID_DOC" ColumnName="ID_DOC" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_SERVICIO" ColumnName="ID_SERVICIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICIO">
+      <EntityTypeMapping TypeName="Model.SERVICIO">
+        <MappingFragment StoreEntitySet="SERVICIO">
+          <ScalarProperty Name="ID_SERVICIO" ColumnName="ID_SERVICIO" />
+          <ScalarProperty Name="NOM_SERVICIO" ColumnName="NOM_SERVICIO" />
+          <ScalarProperty Name="DESCRIPCION_SERVICIO" ColumnName="DESCRIPCION_SERVICIO" />
+          <ScalarProperty Name="VALOR_SERVICIO" ColumnName="VALOR_SERVICIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SITUACION_ECONOMICA">
+      <EntityTypeMapping TypeName="Model.SITUACION_ECONOMICA">
+        <MappingFragment StoreEntitySet="SITUACION_ECONOMICA">
+          <ScalarProperty Name="ID_SIT_ECO" ColumnName="ID_SIT_ECO" />
+          <ScalarProperty Name="AFP" ColumnName="AFP" />
+          <ScalarProperty Name="LIQUIDACION" ColumnName="LIQUIDACION" />
+          <ScalarProperty Name="DESEMPLEO" ColumnName="DESEMPLEO" />
+          <ScalarProperty Name="FINIQUITO" ColumnName="FINIQUITO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_FAMILIA">
+      <EntityTypeMapping TypeName="Model.TIPO_FAMILIA">
+        <MappingFragment StoreEntitySet="TIPO_FAMILIA">
+          <ScalarProperty Name="ID_TIPO_FAMILIA" ColumnName="ID_TIPO_FAMILIA" />
+          <ScalarProperty Name="NOM_TIPO_FAMILIA" ColumnName="NOM_TIPO_FAMILIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_INSUMO">
+      <EntityTypeMapping TypeName="Model.TIPO_INSUMO">
+        <MappingFragment StoreEntitySet="TIPO_INSUMO">
+          <ScalarProperty Name="ID_TIPO_INSUMO" ColumnName="ID_TIPO_INSUMO" />
+          <ScalarProperty Name="NOM_TIPO_INSUMO" ColumnName="NOM_TIPO_INSUMO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_USUARIO">
+      <EntityTypeMapping TypeName="Model.TIPO_USUARIO">
+        <MappingFragment StoreEntitySet="TIPO_USUARIO">
+          <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
+          <ScalarProperty Name="NOM_TIPO_USUARIO" ColumnName="NOM_TIPO_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTROL">
+      <EntityTypeMapping TypeName="Model.CONTROL">
+        <MappingFragment StoreEntitySet="CONTROL">
+          <ScalarProperty Name="NOM_CLIENTE" ColumnName="NOM_CLIENTE" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="SERVICIO" ColumnName="SERVICIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

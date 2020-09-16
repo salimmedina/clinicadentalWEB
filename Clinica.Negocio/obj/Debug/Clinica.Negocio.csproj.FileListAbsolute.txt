@@ -1,0 +1,2 @@
+C:\Users\marck\Desktop\solucion prueba\Clinica.Negocio\obj\Debug\Clinica.Negocio.csprojAssemblyReference.cache
+C:\Users\marck\Desktop\solucion prueba\Clinica.Negocio\obj\Debug\Clinica.Negocio.csproj.CoreCompileInputs.cache
